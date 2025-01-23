@@ -1,0 +1,8 @@
+use("sample_training");
+
+// 1 = ascending, -1 = descending
+db.zips
+.find({ pop: {$gte:100}})
+.sort({pop:-1})
+.limit(1).pretty();
+

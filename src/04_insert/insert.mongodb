@@ -1,0 +1,7 @@
+use("platzi_store")
+db.productos.insertOne({
+  nombre: "Smartphone",
+  descripcion: "Un smartphone muy bonito",
+  precio: 1000,
+  categoria: "Tecnología"
+})

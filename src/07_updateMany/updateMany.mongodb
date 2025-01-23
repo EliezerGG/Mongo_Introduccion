@@ -1,0 +1,15 @@
+use("sample_training")
+
+db.zips.find({
+    city: "CLEVELAND"
+}).count()
+
+db.zips.updateMany(
+    { city: "CLEVELAND" },
+    {
+        $set: {
+            city: "CLEVELAND",
+            lastModified: new Date()
+        }
+    }
+)

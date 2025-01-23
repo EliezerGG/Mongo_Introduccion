@@ -1,0 +1,11 @@
+use("sample_training")
+
+db.zips.find(
+    { state: "NY" },
+    { city: 1, zip: 1, _id: 0 }
+).pretty()
+
+db.trips.find(
+    {tripduration: {$gt: 1000}},
+    {tripduration:1, usertype:1, _id:0}
+)

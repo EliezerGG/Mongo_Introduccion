@@ -1,0 +1,13 @@
+use("platzi_store");
+
+// db.inventory.find({qty: 20})
+
+db.inventory.find({"item.name": "ab"})
+
+db.inventory.find({"item.name": {$eq: "ab"}})
+
+//Using $ne
+db.inventory.find({"item.name": {$ne: "ab"}})
+
+//Using $ne with $eq
+db.inventory.find({"item.name": {$ne: "ab", $eq: "cd"}})

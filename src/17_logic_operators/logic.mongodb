@@ -1,0 +1,50 @@
+use("sample_training");
+//operadores logicos
+
+db.inspections.find({
+    sector: "Tax Prepares - 891",
+    result: "Unable to locate"
+}).count()
+
+db.inspections.find({
+    $and: [{
+        sector: "Tax Prepares - 891"
+    }, {
+        result: "Unable to locate"
+    }]
+}).count()
+
+//operador OR
+db.inspections.find({
+    $or: [{
+        sector: "Tax Prepares - 891"
+    }, {
+        result: "Unable to locate"
+    }]
+}).count()
+
+//operador Nor
+db.inspections.find({
+    $nor: [{
+        sector: "Tax Prepares - 891"
+    }, {
+        result: "Unable to locate"
+    }]
+}).count()
+
+//operador Not
+db.inspections.find({
+    sector: {
+        $not: {
+            $eq: "Tax Prepares - 891"
+        }
+    }
+}).count()
+
+db.inspections.find({
+    result: {
+        $not: {
+            $regex: /locate/
+        }
+    }
+})

@@ -1,0 +1,8 @@
+use("platzi_store");
+
+db.inventory.updateMany(
+  {qty : {$eq: 20}},
+  {
+    $inc: {qty: 10}
+  }
+);
