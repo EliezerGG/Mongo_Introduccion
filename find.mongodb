@@ -1,7 +1,2 @@
-use("sample_training");
-
-db.zips.find(
-    {
-        "city": "CLEVELAND"
-    }
-)
+use("sample_airbnb")
+show collections
